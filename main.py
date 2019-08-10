@@ -1,7 +1,8 @@
 import turtle
+from tqdm import tqdm
 
 shape = "FRFRF" # Initial Condition, Equilateral Triangle
-iterations = 9
+iterations = 10
 
 for i in range(iterations): # Iteratively build the instructions to make the Koch Snowflake
 	# Replace ____ with _/ \_
@@ -19,7 +20,7 @@ turtle.rt(90)
 turtle.pd()
 
 # Parse and execute the instructions to make the snowflake
-for ins in shape:
+for ins in tqdm(shape):
 	if ins == "F":
 		turtle.fd(200.0 / (3 ** (iterations - 1)))
 	elif ins == "L":
